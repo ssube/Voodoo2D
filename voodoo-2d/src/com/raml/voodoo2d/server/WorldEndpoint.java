@@ -2,7 +2,6 @@ package com.raml.voodoo2d.server;
 
 import com.raml.voodoo2d.World;
 import com.raml.voodoo2d.JsonResponse;
-import com.raml.voodoo2d.JsonResponse.ResponseStatus;
 
 import java.io.IOException;
 import java.util.Map;

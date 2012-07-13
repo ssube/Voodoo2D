@@ -1,6 +1,8 @@
 # GWT ignores
 gwt-unitCache
 war/voodoo2d
+war/WEB-INF/classes
+war/WEB-INF/deploy
 
 # Eclipse ignores
 .settings

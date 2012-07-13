@@ -31,6 +31,16 @@
     <url-pattern>/voodoo2d/tileset</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>engineServlet</servlet-name>
+    <servlet-class>com.raml.voodoo2d.server.EngineEndpoint</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>engineServlet</servlet-name>
+    <url-pattern>/voodoo2d/engine</url-pattern>
+  </servlet-mapping>
+  
   <!-- Default page to serve -->
   <welcome-file-list>
     <welcome-file>voodoo2d.html</welcome-file>

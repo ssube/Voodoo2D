@@ -5,12 +5,16 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.annotation.*;
 
 @JsonAutoDetect
 @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class JsonResponse
 {
     public enum ResponseStatus
@@ -26,6 +30,7 @@ public class JsonResponse
             this.value = value;
         }
         
+        @JsonValue
         public int value()
         {
             return this.value;
