@@ -1,0 +1,6 @@
+# GWT ignores
+gwt-unitCache
+war/voodoo2d
+
+# Eclipse ignores
+.settings
