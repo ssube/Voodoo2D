@@ -2,17 +2,14 @@ package com.raml.voodoo2d;
 
 import java.util.Random;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.PrimaryKey;
+import javax.jdo.annotations.IdGeneratorStrategy;
+import javax.jdo.annotations.Persistent;
 
 import com.fasterxml.jackson.annotation.*;
-import com.google.appengine.api.datastore.Key;
 
-@Entity
-@JsonAutoDetect
-@JsonIgnoreProperties(ignoreUnknown = true)
+@PersistenceCapable
 public class World
 {
     public enum WorldSize
@@ -44,14 +41,16 @@ public class World
         }
     }
 
-    @SuppressWarnings("unused")
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @PrimaryKey
+    @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
     @JsonProperty
-    private Key key;
+    private Long id;
     
     @JsonProperty
     private String name;
+    
+    @JsonProperty
+    private String environment;
     
     @JsonProperty
     private byte[][] data;
@@ -66,11 +65,11 @@ public class World
     {
         width = size.width();
         height = size.height();
-        data = new byte[width][height];
+        data = new byte[getWidth()][height];
         
         Random gen = new Random();
         
-        for (int x = 0; x < width; ++x)
+        for (int x = 0; x < getWidth(); ++x)
         {
             for (int y = 0; y < height; ++y)
             {
@@ -87,5 +86,30 @@ public class World
     void setData(byte[][] data) 
     { 
         this.data = data; 
+    }
+
+    public Long getId()
+    {
+        return id;
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public String getEnvironment()
+    {
+        return environment;
+    }
+
+    public int getWidth()
+    {
+        return width;
+    }
+
+    public int getHeight()
+    {
+        return height;
     }
 }

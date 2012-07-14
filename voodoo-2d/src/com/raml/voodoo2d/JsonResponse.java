@@ -35,8 +35,10 @@ public class JsonResponse
     }
     
     private static ObjectMapper mapper = new ObjectMapper();
-    private static JsonResponse serializationError = new JsonResponse(ResponseStatus.Error, "unable to serialize JsonResponse");
-    private static JsonResponse ioError = new JsonResponse(ResponseStatus.Error, "unable to access object for serialization");
+    public static final JsonResponse serializationError = new JsonResponse(ResponseStatus.Error, "unable to serialize JsonResponse");
+    public static final JsonResponse ioError = new JsonResponse(ResponseStatus.Error, "unable to access object for serialization");
+    public static final JsonResponse mustBeJson = new JsonResponse(ResponseStatus.Error, "request content-type must be application/json");
+    public static final JsonResponse mustHaveContent = new JsonResponse(ResponseStatus.Error, "request content-length must be greater than 0");
     
     @JsonProperty
     ResponseStatus status;

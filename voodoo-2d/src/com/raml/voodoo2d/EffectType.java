@@ -12,7 +12,8 @@ public enum EffectType
     Fire(5),       // Fire - fires, lava, magic
     Ice(6),        // Ice - snow, hail, magic
     Poison(7),     // Poison - poisons, magic
-    Shock(8);      // Shock - wires, magic
+    Shock(8);      // Shock - wires, magic    
+    public static final int count = 9;
     
     private int value;
     
@@ -26,4 +27,4 @@ public enum EffectType
     {
         return this.value;
     }
-}
+} 

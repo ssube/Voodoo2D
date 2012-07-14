@@ -14,9 +14,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class WorldEndpoint extends HttpServlet 
 {
-    /**
-     * 
-     */
     private static final long serialVersionUID = 1L;
 
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
