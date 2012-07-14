@@ -1,35 +1,26 @@
 package com.raml.voodoo2d;
 
-import java.util.Map;
+import javax.persistence.Entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class BlockType
-{
-    public class StatePair
-    {
-        public float resist = 1.0f;
-        public short shift = -1;
-    }
-    
-    @JsonProperty
-    short id;
-    @JsonProperty
-    int tier;
-    @JsonProperty
-    String name;
-    @JsonProperty
-    int value;
+/**
+ * Represents a single block type, with identifying info for engine use. Can be stored to Google Datastore through JPA.
+ * @author Sean
+ *
+ */
+@Entity
+public class BlockType extends ObjectType
+{    
+    /**
+     * Whether this object blocks lighting.
+     */
     @JsonProperty
     boolean occluder;
-    @JsonProperty
-    int health;
-    @JsonProperty
-    float strength;
-    @JsonProperty
-    float speed;
+    
+    /**
+     * Whether block sticks (no gravity when touching other blocks)
+     */
     @JsonProperty
     boolean sticky;
-    @JsonProperty
-    Map<EffectType, StatePair> states;
 }

@@ -8,6 +8,9 @@
 	<!-- jQuery resources -->
 	<script type="text/javascript" language="javascript" src="js/jquery-1.7.2.js"></script>
 	
+	<!-- Underscore resources -->
+	<script type="text/javascript" language="javascript" src="js/underscore.js"></script>
+	
 	<!-- Twitter Bootstrap resources -->
 	<link type="text/css" rel="stylesheet" href="css/bootstrap.css">
 	<script type="text/javascript" language="javascript" src="js/bootstrap.js"></script>
@@ -21,12 +24,11 @@
 	var engine = null;
 	$(function(){
 		engine = new Voodoo2D("#game-area");
-		engine.getData();
+		engine.fetch();
 	});
 	</script>
 	
 	<link type="text/css" rel="stylesheet" href="css/voodoo2d.css">
-	<script type="text/javascript" language="javascript" src="voodoo2d/voodoo2d.nocache.js"></script>
 </head>
 
 <body>
@@ -60,16 +62,8 @@
 		</div>
 	</div>
 	<div class="row-fluid">
-		<div class="span12" id="game-area"></div>
-		<div class="span3"></div>
-		<div class="span3">Please enter your name:</div>
-		<div class="span3" id="input-container"></div>
-		<div class="span1" id="submit-container"></div>
-	</div>
-	<div class="row-fluid">
 		<div class="span4"></div>
-		<div class="span4" id="error-container"></div>
+		<div class="span4" id="game-area"></div>
 	</div>
-
 </body>
 </html>

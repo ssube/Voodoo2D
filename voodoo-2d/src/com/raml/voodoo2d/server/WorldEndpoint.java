@@ -2,6 +2,7 @@ package com.raml.voodoo2d.server;
 
 import com.raml.voodoo2d.World;
 import com.raml.voodoo2d.JsonResponse;
+import com.raml.voodoo2d.World.WorldSize;
 
 import java.io.IOException;
 import java.util.Map;
@@ -21,7 +22,7 @@ public class WorldEndpoint extends HttpServlet
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws IOException
     {
-        World world = new World();
+        World world = new World(WorldSize.Demo);
         JsonResponse response = new JsonResponse(world);
         response.respondWithJSON(resp);       
     }

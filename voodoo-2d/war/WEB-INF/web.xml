@@ -41,6 +41,16 @@
     <url-pattern>/voodoo2d/engine</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>blockServlet</servlet-name>
+    <servlet-class>com.raml.voodoo2d.server.BlockEndpoint</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>blockServlet</servlet-name>
+    <url-pattern>/voodoo2d/blocks</url-pattern>
+  </servlet-mapping>
+  
   <!-- Default page to serve -->
   <welcome-file-list>
     <welcome-file>voodoo2d.html</welcome-file>
