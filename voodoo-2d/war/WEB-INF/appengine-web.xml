@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
   <application>voodoo-2d</application>
-  <version>3</version>
+  <version>4</version>
 
   <!--
     Allows App Engine to send multiple requests to one instance in parallel:
@@ -11,6 +11,7 @@
   <!-- Configure serving/caching of GWT files -->
   <static-files>
     <include path="**" />
+    <include path="/resources/**/*" />
 
     <!-- The following line requires App Engine 1.3.2 SDK -->
     <include path="**.nocache.*" expiration="0s" />

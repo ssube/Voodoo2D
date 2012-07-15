@@ -1,0 +1,67 @@
+package com.raml.voodoo2d;
+
+import java.util.Random;
+
+public class PerlinNoise
+{
+    private Random gen;
+    private int width, height;
+    private float[][] bucket;
+    
+    public PerlinNoise(int width, int height)
+    {
+        this.width = width;
+        this.height = height;
+        this.gen = new Random();
+        this.bucket = new float[width][height];
+        
+        for (int x = 0; x < width; ++x)
+        {
+            for (int y = 0; y < height; ++y)
+            {
+                this.bucket[x][y] = this.gen.nextFloat();
+            }
+        }
+    }
+    
+    public float get(float x, float y)
+    {
+        int cellx = (int) Math.floor(x); int nextx = cellx + 1;
+        int celly = (int) Math.floor(y); int nexty = celly + 1;
+            cellx = cellx % this.width;      nextx = nextx % this.width;         
+            celly = celly % this.height;     nexty = nexty % this.height;
+            
+        float offx = x - cellx;
+        float offy = y - celly;
+        
+        float x0y0 = this.bucket[cellx][celly];
+        float x0y1 = this.bucket[cellx][nexty];
+        float x1y0 = this.bucket[nextx][celly];
+        float x1y1 = this.bucket[nextx][nexty];
+        float x0   = this.interpCos(x0y0, x0y1, offy);
+        float x1   = this.interpCos(x1y0, x1y1, offy);
+        float sum  = this.interpCos(x0, x1, offx);
+        
+        return sum;
+    }
+    
+    private float interpCos(float a, float b, float x)
+    {
+        float ft = (float) (x * Math.PI);
+        float f  = (float) ((1 - Math.cos(ft)) * 0.5);
+        return     (a * (1 - f)) + (b * f);
+    }
+
+    public float get(float x, float y, int octaves)
+    {
+        float result = 0;
+        
+        for (int octave = 0; octave < octaves; ++octave)
+        {
+            float factor = (float) Math.pow(2, octave + 1);
+            result += this.get(x * factor, y * factor) / factor;
+        }
+        
+        return result;
+    }
+}
