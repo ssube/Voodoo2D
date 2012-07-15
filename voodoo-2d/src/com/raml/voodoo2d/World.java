@@ -67,14 +67,15 @@ public class World
         height = size.height();
         data = new byte[getWidth()][height];
         
-        Random gen = new Random();
+        PerlinNoise gen = new PerlinNoise(width, height);
         
         for (int x = 0; x < getWidth(); ++x)
         {
             for (int y = 0; y < height; ++y)
             {
+                float noise = gen.get(x, y, 4);
                 //data[x][y] = (byte) (gen.nextInt() % Byte.MAX_VALUE);
-                data[x][y] = (byte) ((gen.nextInt() % 7) + 7);
+                data[x][y] = (byte) (noise * 255);
             }
         }
     }
