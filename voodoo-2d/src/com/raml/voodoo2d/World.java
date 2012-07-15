@@ -73,7 +73,8 @@ public class World
         {
             for (int y = 0; y < height; ++y)
             {
-                float noise = gen.get(x, y, 4);
+                float noise = gen.get(x, y, 6);
+                
                 //data[x][y] = (byte) (gen.nextInt() % Byte.MAX_VALUE);
                 data[x][y] = (byte) (noise * 255);
             }
