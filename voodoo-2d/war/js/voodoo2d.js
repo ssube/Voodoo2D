@@ -132,12 +132,12 @@ Voodoo2D = null;
 
     Voodoo2D.prototype.paintBlock = function(ctx, buf, x, y, value)
     {
-        var sourceVal = (value / 36.42857142857143) + 7;
-        var sourceRow = sourceVal % 7;
-        var sourceCol = (sourceVal - sourceRow) / 7;
+        var sourceVal = value; // (value / 36.42857142857143) + 7;
+        var sourceRow = sourceVal % 8;
+        var sourceCol = (sourceVal - sourceRow) / 8;
         ctx.drawImage(this.tileImage, sourceCol * 80, sourceRow * 80, 80, 80, x * 16, y * 16, 16, 16);
 
-        buf.fillStyle = "rgb(" + value + "," + value + "," + value + ")";
+        buf.fillStyle = "rgb(" + value*13 + "," + value*13 + "," + value*13 + ")";
         buf.fillRect(x * 2, y * 2, 2, 2);
     }
     

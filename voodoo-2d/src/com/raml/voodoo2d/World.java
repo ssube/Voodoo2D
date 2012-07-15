@@ -1,13 +1,12 @@
 package com.raml.voodoo2d;
 
-import java.util.Random;
-
-import javax.jdo.annotations.PersistenceCapable;
-import javax.jdo.annotations.PrimaryKey;
 import javax.jdo.annotations.IdGeneratorStrategy;
+import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.PrimaryKey;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @PersistenceCapable
 public class World
@@ -61,6 +60,8 @@ public class World
     @JsonProperty
     private int height;
     
+    private static final byte[] blockBucket = {1, 1, 9, 17, 3, 24, 24};
+    
     public World(WorldSize size)
     {
         width = size.width();
@@ -73,10 +74,13 @@ public class World
         {
             for (int y = 0; y < height; ++y)
             {
-                float noise = gen.get(x, y, 6);
+                float noise = gen.get(x / 16.0f, y / 16.0f, 6);
                 
-                //data[x][y] = (byte) (gen.nextInt() % Byte.MAX_VALUE);
-                data[x][y] = (byte) (noise * 255);
+                // air thresholding
+                noise = (float) Math.min(noise * 1.3, 1);
+                
+                int block = (int) (noise * (blockBucket.length - 1));
+                data[x][y] = blockBucket[block];
             }
         }
     }
