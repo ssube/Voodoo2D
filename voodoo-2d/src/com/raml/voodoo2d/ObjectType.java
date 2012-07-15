@@ -19,7 +19,7 @@ import com.google.appengine.api.datastore.Key;
 
 @PersistenceCapable
 @Inheritance(strategy = InheritanceStrategy.SUBCLASS_TABLE)
-public class ObjectType
+public class ObjectType extends StoredJsonClass
 {    
     public static enum CoverSupport
     {
@@ -29,25 +29,6 @@ public class ObjectType
         Fungi,
         All;
     }
-    
-    public static final Map<String, Class> subtypes;
-    
-    static 
-    {
-        subtypes = new HashMap<String, Class>();
-        subtypes.put("BlockType", BlockType.class);
-    }
-    
-    /**
-     * Datastore identifier.
-     */
-    @JsonProperty
-    @JsonSerialize(using = KeySerializer.class)
-    @JsonDeserialize(using = KeyDeserializer.class)
-    @SuppressWarnings("unused")
-    @PrimaryKey
-    @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
-    private Key id;
     
     /**
      * Set of objects this belongs to (eg "normal", "space"). Each world is bound to a particular environment.
@@ -112,11 +93,6 @@ public class ObjectType
     @Persistent
     @Embedded
     SpriteDefinition sprite;
-    
-    public Key getId()
-    {
-        return id;
-    }
     
     public String getEnvironment()
     {

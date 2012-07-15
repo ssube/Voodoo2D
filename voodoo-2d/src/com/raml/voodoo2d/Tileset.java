@@ -1,33 +1,53 @@
 package com.raml.voodoo2d;
 
-import com.fasterxml.jackson.annotation.*;
+import javax.jdo.annotations.PersistenceCapable;
 
-@JsonAutoDetect
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class Tileset
-{
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@PersistenceCapable
+public class Tileset extends StoredJsonClass
+{    
     @JsonProperty
-    private int id;
+    private String environment;
+    
     @JsonProperty
     private String name;
+    
     @JsonProperty
-    private String fg_uri;
-    @JsonProperty
-    private String bg_uri;
+    private String uri;
+    
+    public static final Tileset example = new Tileset("example", "example", "example.png");
     
     public Tileset()
     {
-        this.id = 1;
-        this.name = "test";
-        this.fg_uri = "foreground.png";
-        this.bg_uri = "background.png";
     }
     
-    public Tileset(int id)
+    public Tileset(String environment, String name, String uri)
     {
-        this.id = id;
-        this.name = "test" + id;
-        this.fg_uri = "foreground.png";
-        this.bg_uri = "background.png";        
+        this.environment = environment;
+        this.name = name;
+        this.uri = uri;
+    }
+
+    public String getEnvironment()
+    {
+        return environment;
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public String getUri()
+    {
+        return uri;
+    }
+    
+    public void copy(Tileset other)
+    {
+        this.environment = other.environment;
+        this.name = other.name;
+        this.uri = other.uri;
     }
 }
