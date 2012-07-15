@@ -5,24 +5,18 @@ import com.fasterxml.jackson.annotation.*;
 public class Engine
 {
     @JsonProperty
-    final static String name = "Voodoo2D";
+    final String name = "Voodoo2D";
+    
     @JsonProperty
-    final static int version = 1;
+    final int version = 3;
+    
+    @JsonProperty
+    final String resourceRoot = "/resources";
     
     @JsonIgnore
-    private static Engine instance;
+    public static final Engine instance = new Engine();
     
-    public static Engine getInstance()
-    {
-        if (instance == null)
-        {
-            instance = new Engine();
-        }
-        
-        return instance;
-    }
-    
-    private Engine()
+    public Engine()
     {
         
     }

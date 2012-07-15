@@ -1,24 +1,22 @@
 package com.raml.voodoo2d.server;
 
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.raml.voodoo2d.BlockType;
-import com.raml.voodoo2d.ObjectMapperWrapper;
-import com.raml.voodoo2d.PersistenceFactoryWrapper;
-import com.raml.voodoo2d.JsonResponse;
-import com.raml.voodoo2d.JsonResponse.ResponseStatus;
-import com.raml.voodoo2d.Tileset;
-
 import java.io.IOException;
 import java.util.List;
 
+import javax.jdo.PersistenceManager;
+import javax.jdo.Query;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import javax.jdo.PersistenceManager;
-import javax.jdo.Query;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.raml.voodoo2d.JsonResponse;
+import com.raml.voodoo2d.JsonResponse.ResponseStatus;
+import com.raml.voodoo2d.ObjectMapperWrapper;
+import com.raml.voodoo2d.PersistenceFactoryWrapper;
+import com.raml.voodoo2d.Tileset;
 
 public class TilesetEndpoint extends HttpServlet
 {

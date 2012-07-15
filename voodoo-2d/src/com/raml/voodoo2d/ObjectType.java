@@ -1,20 +1,14 @@
 package com.raml.voodoo2d;
 
 import java.security.InvalidParameterException;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.jdo.annotations.Embedded;
-import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.Inheritance;
 import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
-import javax.jdo.annotations.PrimaryKey;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.google.appengine.api.datastore.Key;
 
 @PersistenceCapable

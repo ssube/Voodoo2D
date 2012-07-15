@@ -1,7 +1,4 @@
-if (typeof Voodoo2D === "undefined") 
-{
-    Voodoo2D = null;
-}
+Voodoo2D = null;
 
 (function(){
     "use strict";
@@ -9,12 +6,72 @@ if (typeof Voodoo2D === "undefined")
     Voodoo2D = function(el)
     {
         _.bindAll();
+        this.ready = false;
         
         this.canvas = null;
         if (!this.createCanvas(el))
         {
             throw new Exception("OH NOES!");
         }
+        
+        this.init();
+    }
+    
+    Voodoo2D.prototype.init = function()
+    {
+        var self = this;
+        
+        $.ajax({
+            url: "/voodoo2d/engine",
+            success: _.bind(this.initDone, this), 
+            error: _.bind(this.initFailed, this)
+        });
+    };
+    
+    Voodoo2D.prototype.initDone = function(data)
+    {
+        this.name = data.payload.name;
+        this.version = data.payload.version;
+        this.resourceRoot = data.payload.resourceRoot;
+        
+        $.ajax({
+            url: "/voodoo2d/tileset", 
+            success: _.bind(this.tilesetDone, this), 
+            error: _.bind(this.tilesetFailed, this)
+        });
+    };
+    
+    Voodoo2D.prototype.initFailed = function()
+    {
+        alert("initFailed");
+    };
+    
+    Voodoo2D.prototype.tilesetDone = function(data)
+    {
+        this.tileset = data.payload[0];
+        
+        if (this.tileset)
+        {
+            this.tileImage = new Image();
+            this.tileImage.src = this.resourceRoot + "/" + this.tileset.uri;
+            _.delay(_.bind(this.imageDone, this), 250);
+        }
+    };
+    
+    Voodoo2D.prototype.tilesetFailed = function()
+    {
+        alert("tilesetFailed");
+    };
+    
+    Voodoo2D.prototype.imageDone = function()
+    {
+        if (!this.tileImage.complete)
+        {
+            _.delay(this.imageDone, 250);
+            return;
+        }
+        
+        this.ready = true;
     }
     
     Voodoo2D.prototype.createCanvas = function(el)
@@ -51,35 +108,12 @@ if (typeof Voodoo2D === "undefined")
         this.canvas.height = height;
     }
 
-    Voodoo2D.prototype.paintBlock = function(buffer, x, y, value)
+    Voodoo2D.prototype.paintBlock = function(ctx, x, y, value)
     {
-        var offset = ((y * buffer.width) + x) * 4;
-        
-        buffer.data[offset]      = value;
-        buffer.data[offset + 1]  = value;
-        buffer.data[offset + 2]  = value;
-        buffer.data[offset + 3]  = 255;
-        
-        offset = ((y * buffer.width) + (x+1)) * 4;
-        
-        buffer.data[offset]      = value;
-        buffer.data[offset + 1]  = value;
-        buffer.data[offset + 2]  = value;
-        buffer.data[offset + 3]  = 255;
-        
-        offset = (((y+1) * buffer.width) + x) * 4;
-        
-        buffer.data[offset]      = value;
-        buffer.data[offset + 1]  = value;
-        buffer.data[offset + 2]  = value;
-        buffer.data[offset + 3]  = 255;
-        
-        offset = (((y+1) * buffer.width) + (x+1)) * 4;
-        
-        buffer.data[offset]      = value;
-        buffer.data[offset + 1]  = value;
-        buffer.data[offset + 2]  = value;
-        buffer.data[offset + 3]  = 255;
+        var sourceRow = value % 7;
+        var sourceCol = (value - sourceRow) / 7;
+
+        ctx.drawImage(this.tileImage, sourceCol * 80, sourceRow * 80, 80, 80, x * 16, y * 16, 16, 16);
     }
     
     Voodoo2D.prototype.fetch = function()
@@ -96,7 +130,7 @@ if (typeof Voodoo2D === "undefined")
                 }
                 
                 self.worldData = response.payload;
-                self.resizeCanvas(self.worldData.width * 2, self.worldData.height * 2);
+                self.resizeCanvas(self.worldData.width * 16, self.worldData.height * 16);
                 self.render();
             }
         });        
@@ -105,7 +139,6 @@ if (typeof Voodoo2D === "undefined")
     Voodoo2D.prototype.render = function()
     {
         var canvasCtx = this.canvas.getContext("2d");
-        var canvasData = canvasCtx.getImageData(0, 0, this.worldData.width * 2, this.worldData.height * 2);
         
         for (var x = 0; x < this.worldData.width; ++x)
         {
@@ -115,9 +148,8 @@ if (typeof Voodoo2D === "undefined")
             for (var y = 0; y < this.worldData.height; ++y)
             {
                 var dataUnit = rawColumn[y];
-                this.paintBlock(canvasData, x*2, y*2, dataUnit);
+                this.paintBlock(canvasCtx, x, y, dataUnit);
             }
         }
-        canvasCtx.putImageData(canvasData, 0, 0);
     }
 })();

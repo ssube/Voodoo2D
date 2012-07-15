@@ -15,7 +15,7 @@ public class World
     public enum WorldSize
     {
         Chunk(128,128),
-        Demo(128,128),
+        Demo(64,64),
         Small(2048, 1024),
         Medium(4096, 2048),
         Large(8192, 2048);
@@ -73,7 +73,8 @@ public class World
         {
             for (int y = 0; y < height; ++y)
             {
-                data[x][y] = (byte) (gen.nextInt() % Byte.MAX_VALUE);
+                //data[x][y] = (byte) (gen.nextInt() % Byte.MAX_VALUE);
+                data[x][y] = (byte) ((gen.nextInt() % 7) + 7);
             }
         }
     }
