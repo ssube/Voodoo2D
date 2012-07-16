@@ -60,7 +60,7 @@ public class World
     @JsonProperty
     private int height;
     
-    private static final byte[] blockBucket = {1, 1, 9, 17, 3, 24, 24};
+    private static final byte[] blockBucket = {1, 1, 9, 17, 3, 0, 0};
     
     public World(WorldSize size)
     {
