@@ -1,0 +1,9 @@
+# Java ignores
+out/*
+
+# IntelliJ ignores
+.idea/*
+*.iml
+
+# Eclipse ignores
+.settings
