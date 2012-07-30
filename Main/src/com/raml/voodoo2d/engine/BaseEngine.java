@@ -24,6 +24,7 @@ public class BaseEngine extends Game {
     private Vector2 playerPos;
     private long frames, frameRound, lastFrameTime;
     private World world;
+    private float gametime;
 
     private final int tile = 32;
     private final int source = 32;
@@ -132,23 +133,31 @@ public class BaseEngine extends Game {
     public void handleInput(long delta)
     {
         double mult = delta / 1000000000f;
+        gametime += mult;
         double distance = tile * 4;
 
         Vector2 newPos = new Vector2(playerPos);
 
-        if (Gdx.input.isTouched())
+        if (gametime > 0.25f)
         {
-            Vector3 touchPos = new Vector3();
-            touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
-            camera.unproject(touchPos);
-
-            if (Gdx.input.isKeyPressed(Input.Keys.SHIFT_LEFT))
+            if (Gdx.input.isKeyPressed(Input.Keys.BACKSPACE))
             {
-                checkCreate(touchPos);
+                createWorld();
             }
-            else
+            if (Gdx.input.isTouched())
             {
-                checkDamage(touchPos);
+                Vector3 touchPos = new Vector3();
+                touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
+                camera.unproject(touchPos);
+
+                if (Gdx.input.isKeyPressed(Input.Keys.SHIFT_LEFT))
+                {
+                    checkCreate(touchPos);
+                }
+                else
+                {
+                    checkDamage(touchPos);
+                }
             }
         }
 
@@ -176,10 +185,6 @@ public class BaseEngine extends Game {
         Vector2 diff = new Vector2(newPos).sub(playerPos);
         playerPos.add(diff.mul(speedMult));
 
-        if (Gdx.input.isKeyPressed(Input.Keys.BACKSPACE))
-        {
-            createWorld();
-        }
     }
 
     public float checkCollision(Vector2 newPos)
@@ -187,16 +192,14 @@ public class BaseEngine extends Game {
         byte[][][] cells = world.getData();
 
         // Figure out what cell this corresponds to
-        Vector2[] newCells = new Vector2[4];
-        newCells[0] = new Vector2(newPos).mul(1.0f / tile);
-        newCells[1] = new Vector2(newPos).add(4, tile - 4f).mul(1.0f / tile);
-        newCells[2] = new Vector2(newPos).add(tile - 4f, 4).mul(1.0f / tile);
-        newCells[3] = new Vector2(newPos).add(tile - 4f, tile - 4f).mul(1.0f / tile);
+        Vector2[] newCells = new Vector2[2];
+        newCells[0] = new Vector2(newPos).add(tile / 2f, 4).mul(1.0f / tile);
+        newCells[1] = new Vector2(newPos).add(tile / 2f, tile - 4).mul(1.0f / tile);
 
         // Find the average multiplier of the cells
         float mult = 1f;
 
-        for (int i = 0; i < 4; ++i)
+        for (int i = 0; i < 2; ++i)
         {
             if (newCells[i].x < 0 || newCells[i].y < 0 || newCells[i].x >= world.getWidth() || newCells[i].y >= world.getHeight())
             {
@@ -245,6 +248,10 @@ public class BaseEngine extends Game {
             {
                 cells[cellX][cellY][i] = 0;
             }
+        }
+        else
+        {
+            cells[cellX][cellY][World.healthByte] = health;
         }
     }
 
