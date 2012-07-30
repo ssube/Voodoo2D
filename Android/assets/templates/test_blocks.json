@@ -10,7 +10,6 @@
             "resists":null,
             "shift_mod":null,
             "shift_kill":null,
-            "index":1,
             "occlusion":null,
             "permeable":false,
             "sticky":false
@@ -25,7 +24,6 @@
             "resists":null,
             "shift_mod":null,
             "shift_kill":null,
-            "index":2,
             "occlusion":null,
             "permeable":false,
             "sticky":false

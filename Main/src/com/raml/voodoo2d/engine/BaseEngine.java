@@ -89,16 +89,16 @@ public class BaseEngine extends Game {
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
 
-        byte[][] data = world.getData();
+        byte[][][] data = world.getData();
         for (int x = 0; x < data.length; ++x)
         {
-            byte[] row = data[x];
+            byte[][] row = data[x];
             for (int y = 0; y < row.length; ++y)
             {
-                byte cell = row[y];
-                if (cell != 0)
+                byte[] cell = row[y];
+                if (cell[World.indexByte] != 0)
                 {
-                    Sprite sprite = world.getCachedSprite(cell);
+                    Sprite sprite = world.getCachedSprite(cell[World.indexByte]);
                     if (sprite != null)
                     {
                         //Rectangle rect = sprite.getFrame(0);
@@ -164,6 +164,11 @@ public class BaseEngine extends Game {
             newPos.y += (distance * mult);
         }
 
+        //if (Gdx.input.isKeyPressed(Input.Keys.SPACE))
+        //{
+        //    checkDamage();
+        //}
+
         float speedMult = checkCollision(newPos);
         Vector2 diff = new Vector2(newPos).sub(playerPos);
         playerPos.add(diff.mul(speedMult));
@@ -176,7 +181,7 @@ public class BaseEngine extends Game {
 
     public float checkCollision(Vector2 newPos)
     {
-        byte[][] cells = world.getData();
+        byte[][][] cells = world.getData();
 
         // Figure out what cell this corresponds to
         Vector2[] newCells = new Vector2[4];
@@ -198,7 +203,7 @@ public class BaseEngine extends Game {
             int cellX = (int)Math.floor(newCells[i].x);
             int cellY = (int)Math.floor(newCells[i].y);
 
-            byte cell = cells[cellX][cellY];
+            byte cell = cells[cellX][cellY][World.indexByte];
 
             if (cell != 0)
             {

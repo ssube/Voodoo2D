@@ -40,6 +40,11 @@ public class World
         }
     }
 
+    public static final int indexByte = 0;
+    public static final int subByte = 1;
+    public static final int healthByte = 2;
+    public static final int metaByte = 3;
+
     private UUID key;
     private String name;
 
@@ -49,7 +54,7 @@ public class World
     @JsonIgnore
     private Tileset tileset;
 
-    private byte[][] data;
+    private byte[][][] data;
     private final int width;
     private final int height;
     private int maxTier;
@@ -68,12 +73,13 @@ public class World
 
         this.width = size.width();
         this.height = size.height();
-        this.data = new byte[getWidth()][height];
+        this.data = new byte[width][height][4];
         this.maxTier = 5;
         this.airTier = 3;
 
         List<Byte> byteList = buildTileList();
         PerlinNoise gen = new PerlinNoise(width, height);
+        Random random = new Random();
         
         for (int x = 0; x < getWidth(); ++x)
         {
@@ -82,7 +88,8 @@ public class World
                 float noise = gen.get(x / 16.0f, y / 16.0f, 6);
                 noise = (float)Math.round(noise * (byteList.size() - 1));
 
-                this.data[x][y] = byteList.get((int)noise);
+                random.nextBytes(data[x][y]);
+                data[x][y][indexByte] = byteList.get((int)noise);
             }
         }
     }
@@ -127,7 +134,7 @@ public class World
         return name;
     }
     
-    public byte[][] getData()
+    public byte[][][] getData()
     { 
         return data;
     }

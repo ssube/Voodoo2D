@@ -6,14 +6,8 @@ import com.badlogic.gdx.math.Vector3;
  * Represents a single block type, with identifying info for engine use.
  */
 public class BlockType extends ObjectType
-{         
-    /**
-     * Block id for world purposes (used to refer to this block in world data).
-     * 
-     * @note This is not globally unique, just within a single tileset.
-     */
-    private short index;
-    
+{
+
     /**
      * How much light is blocked by this object, per-channel. (1,1,1) is full occlusion (no light).
      */
@@ -31,11 +25,6 @@ public class BlockType extends ObjectType
     
     public BlockType()
     {       
-    }
-    
-    public short getIndex()
-    {
-        return index;
     }
     
     public Vector3 getOcclusion()
