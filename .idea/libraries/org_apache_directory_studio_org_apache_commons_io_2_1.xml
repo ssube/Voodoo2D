@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="org.apache.directory.studio:org.apache.commons.io:2.1" type="repository">
+    <properties maven-id="org.apache.directory.studio:org.apache.commons.io:2.1" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/org.apache.commons.io-2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

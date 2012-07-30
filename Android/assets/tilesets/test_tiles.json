@@ -1,0 +1,13 @@
+{
+    "sheet": "blocks1",
+    "tiles": {
+        "2": {
+            "sprite": "rock-anim",
+            "block": "8eb08156-90d4-46ed-81cb-5613665270b0"
+        },
+        "1": {
+            "sprite": "rock",
+            "block": "54afabc5-f265-447e-94fa-34418c626921"
+        }
+    }
+}
