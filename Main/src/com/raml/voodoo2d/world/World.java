@@ -44,6 +44,7 @@ public class World
     public static final int subByte = 1;
     public static final int healthByte = 2;
     public static final int metaByte = 3;
+    public static final int cellSize = 4;
 
     private UUID key;
     private String name;
@@ -61,6 +62,9 @@ public class World
     private int airTier;
 
     @JsonIgnore
+    private ArrayList<Byte> byteList;
+
+    @JsonIgnore
     private Map<Byte, Sprite> spriteCache;
 
     public World(String name, String tileset, WorldSize size) throws IOException
@@ -73,7 +77,7 @@ public class World
 
         this.width = size.width();
         this.height = size.height();
-        this.data = new byte[width][height][4];
+        this.data = new byte[width][height][cellSize];
         this.maxTier = 5;
         this.airTier = 3;
 
@@ -96,7 +100,7 @@ public class World
 
     private ArrayList<Byte> buildTileList()
     {
-        ArrayList<Byte> byteList = new ArrayList<Byte>();
+        byteList = new ArrayList<Byte>();
         ResourceManager manager = ResourceManager.getInstance();
 
         for (int r = 0; r < airTier; ++r)
@@ -176,5 +180,14 @@ public class World
     public Sprite getCachedSprite(byte key)
     {
         return spriteCache.get(key);
+    }
+
+    static Random gen = new Random();
+    public byte getNewBlock(int x, int y)
+    {
+        int index = gen.nextInt();
+        if (index < 0) { index = 0 - index; }
+        index %= byteList.size();
+        return byteList.get(index);
     }
 }

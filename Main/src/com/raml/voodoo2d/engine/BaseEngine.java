@@ -141,7 +141,15 @@ public class BaseEngine extends Game {
             Vector3 touchPos = new Vector3();
             touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
             camera.unproject(touchPos);
-            newPos.set(touchPos.x, touchPos.y);
+
+            if (Gdx.input.isKeyPressed(Input.Keys.SHIFT_LEFT))
+            {
+                checkCreate(touchPos);
+            }
+            else
+            {
+                checkDamage(touchPos);
+            }
         }
 
         if (Gdx.input.isKeyPressed(Input.Keys.A))
@@ -163,11 +171,6 @@ public class BaseEngine extends Game {
         {
             newPos.y += (distance * mult);
         }
-
-        //if (Gdx.input.isKeyPressed(Input.Keys.SPACE))
-        //{
-        //    checkDamage();
-        //}
 
         float speedMult = checkCollision(newPos);
         Vector2 diff = new Vector2(newPos).sub(playerPos);
@@ -218,6 +221,55 @@ public class BaseEngine extends Game {
         }
 
         return mult;
+    }
+
+    public void checkDamage(Vector3 pos)
+    {
+        Vector2 cellPos = new Vector2(pos.x, pos.y).mul(1f / tile);
+        int cellX = (int)Math.floor(cellPos.x);
+        int cellY = (int)Math.floor(cellPos.y);
+
+        byte[][][] cells = world.getData();
+
+        if (cellX < 0 || cellY < 0 || cellX >= world.getWidth() || cellY >= world.getHeight())
+        {
+            return;
+        }
+
+        byte[] cell = cells[cellX][cellY];
+        byte health = cell[World.healthByte];
+        health -= 10;
+        if (health < 0)
+        {
+            for (int i = 0; i < World.cellSize; ++i)
+            {
+                cells[cellX][cellY][i] = 0;
+            }
+        }
+    }
+
+    public void checkCreate(Vector3 pos)
+    {
+        Vector2 cellPos = new Vector2(pos.x, pos.y).mul(1f / tile);
+        int cellX = (int)Math.floor(cellPos.x);
+        int cellY = (int)Math.floor(cellPos.y);
+
+        byte[][][] cells = world.getData();
+
+        if (cellX < 0 || cellY < 0 || cellX >= world.getWidth() || cellY >= world.getHeight())
+        {
+            return;
+        }
+
+        byte[] cell = cells[cellX][cellY];
+        if (cell[World.indexByte] == 0)
+        {
+            for (int i = 0; i < World.cellSize; ++i)
+            {
+                cells[cellX][cellY][i] = 50;
+            }
+            cells[cellX][cellY][World.indexByte] = world.getNewBlock(cellX, cellY);
+        }
     }
 
     public void pause()
