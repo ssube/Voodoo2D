@@ -68,7 +68,16 @@
           <file leaf-file-name="BaseEngine.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/BaseEngine.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="185" column="64" selection-start="5310" selection-end="5310" vertical-scroll-proportion="0.0">
+                <state line="148" column="60" selection-start="4480" selection-end="4480" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="5" column="4" selection-start="53" selection-end="53" vertical-scroll-proportion="0.11127596">
                   <folding />
                 </state>
               </provider>
@@ -117,10 +126,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="test_tiles.json" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="test_tiles.json" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Android/assets/tilesets/test_tiles.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="9" column="58" selection-start="265" selection-end="265" vertical-scroll-proportion="0.20029673">
+                <state line="12" column="0" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -129,7 +138,7 @@
           <file leaf-file-name="test_blocks.json" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Android/assets/templates/test_blocks.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="18" column="20" selection-start="447" selection-end="447" vertical-scroll-proportion="0.0">
+                <state line="21" column="28" selection-start="572" selection-end="572" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -138,7 +147,7 @@
           <file leaf-file-name="World.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/world/World.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="47" column="0" selection-start="1069" selection-end="1069" vertical-scroll-proportion="0.0">
+                <state line="47" column="0" selection-start="1171" selection-end="1171" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -151,7 +160,7 @@
           <file leaf-file-name="Tileset.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/Tileset.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="100" column="4" selection-start="2246" selection-end="2246" vertical-scroll-proportion="0.0">
+                <state line="80" column="4" selection-start="1950" selection-end="1950" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -170,9 +179,7 @@
             <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/SpriteSheet.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="48" column="0" selection-start="1556" selection-end="1556" vertical-scroll-proportion="0.0">
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -180,25 +187,43 @@
           <file leaf-file-name="Sprite.java" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/Sprite.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="56" column="3" selection-start="1306" selection-end="1306" vertical-scroll-proportion="0.42550144">
+                <state line="56" column="3" selection-start="1306" selection-end="1306" vertical-scroll-proportion="0.021489972">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Animation.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="jar://$PROJECT_DIR$/Main/libs/gdx-sources.jar!/com/badlogic/gdx/graphics/g2d/Animation.java">
+          <file leaf-file-name="EffectType.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/world/EffectType.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="28" column="13" selection-start="1136" selection-end="1136" vertical-scroll-proportion="0.0">
+                <state line="16" column="3" selection-start="651" selection-end="651" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Rectangle.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="jar://$PROJECT_DIR$/Main/libs/gdx-sources.jar!/com/badlogic/gdx/math/Rectangle.java">
+          <file leaf-file-name="BlockType.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/world/BlockType.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="19" column="13" selection-start="973" selection-end="973" vertical-scroll-proportion="0.0">
+                <state line="26" column="4" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ObjectType.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/world/ObjectType.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="103" column="4" selection-start="2334" selection-end="2334" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DiceRoll.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/common/DiceRoll.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="32" column="47" selection-start="595" selection-end="595" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -216,10 +241,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Main/src/com/raml/voodoo2d/common/JsonResource.java" />
-        <option value="$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/ResourceSheet.java" />
-        <option value="$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/TemplateSheet.java" />
-        <option value="$PROJECT_DIR$/Android/assets/objects/test_blocks.json" />
         <option value="$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/ResourceManager.java" />
         <option value="$PROJECT_DIR$/Android/assets/tilesets/test.json" />
         <option value="$PROJECT_DIR$/Android/assets/sprites/test.json" />
@@ -229,9 +250,13 @@
         <option value="$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/Sprite.java" />
         <option value="$PROJECT_DIR$/Android/assets/sprites/blocks1.json" />
         <option value="$PROJECT_DIR$/Main/src/com/raml/voodoo2d/world/World.java" />
-        <option value="$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/BaseEngine.java" />
-        <option value="$PROJECT_DIR$/Android/assets/templates/test_blocks.json" />
         <option value="$PROJECT_DIR$/Android/assets/tilesets/test_tiles.json" />
+        <option value="$PROJECT_DIR$/Main/src/com/raml/voodoo2d/world/BlockType.java" />
+        <option value="$PROJECT_DIR$/Main/src/com/raml/voodoo2d/world/ObjectType.java" />
+        <option value="$PROJECT_DIR$/Android/assets/templates/test_blocks.json" />
+        <option value="$PROJECT_DIR$/Main/src/com/raml/voodoo2d/common/DiceRoll.java" />
+        <option value="$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/BaseEngine.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -409,22 +434,22 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Voodoo2d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
             <PATH_ELEMENT USER_OBJECT="Root">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Voodoo2d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -704,14 +729,14 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32931355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32931355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1310757" sideWeight="0.6706865" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32931355" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13027889" sideWeight="0.6706865" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32931355" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32931355" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -779,34 +804,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/common/JsonResource.java">
+    <entry file="jar://$PROJECT_DIR$/Main/libs/gdx-sources.jar!/com/badlogic/gdx/graphics/Texture.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="83" selection-start="746" selection-end="746" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/Main/libs/gdx-sources.jar!/com/badlogic/gdx/graphics/g2d/Animation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="13" selection-start="1136" selection-end="1136" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/Main/libs/gdx-sources.jar!/com/badlogic/gdx/math/Rectangle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="973" selection-end="973" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/Tileset.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="4" selection-start="2246" selection-end="2246" vertical-scroll-proportion="0.0">
+        <state line="261" column="0" selection-start="9130" selection-end="9130" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/SpriteSheet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="0" selection-start="1556" selection-end="1556" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -815,65 +816,92 @@
         <state />
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/Main/libs/gdx-sources.jar!/com/badlogic/gdx/graphics/Texture.java">
+    <entry file="file://$PROJECT_DIR$/Android/assets/sprites/blocks1.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="261" column="0" selection-start="9130" selection-end="9130" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="1" column="15" selection-start="17" selection-end="17" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/Main/libs/gdx-sources.jar!/com/badlogic/gdx/graphics/g2d/TextureRegion.java">
+    <entry file="file://$PROJECT_DIR$/Android/assets/tilesets/test_tiles.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="171" column="0" selection-start="5501" selection-end="5501" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="12" column="0" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/Main/libs/gdx-sources.jar!/com/badlogic/gdx/graphics/g2d/SpriteBatch.java">
+    <entry file="file://$PROJECT_DIR$/Android/assets/templates/test_blocks.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="753" column="0" selection-start="25545" selection-end="25545" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/Sprite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="3" selection-start="1306" selection-end="1306" vertical-scroll-proportion="0.42550144">
+        <state line="21" column="28" selection-start="572" selection-end="572" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/world/World.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="0" selection-start="1069" selection-end="1069" vertical-scroll-proportion="0.0">
+        <state line="47" column="0" selection-start="1171" selection-end="1171" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/SpriteSheet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="0" selection-start="1556" selection-end="1556" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/world/ObjectType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="4" selection-start="2334" selection-end="2334" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/Tileset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="4" selection-start="1950" selection-end="1950" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/common/JsonResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="83" selection-start="746" selection-end="746" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/common/DiceRoll.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="47" selection-start="595" selection-end="595" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/world/BlockType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="4" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/world/EffectType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="3" selection-start="651" selection-end="651" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/Sprite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="3" selection-start="1306" selection-end="1306" vertical-scroll-proportion="0.021489972">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/BaseEngine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="185" column="64" selection-start="5310" selection-end="5310" vertical-scroll-proportion="0.0">
+        <state line="148" column="60" selection-start="4480" selection-end="4480" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Android/assets/sprites/blocks1.json">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="15" selection-start="17" selection-end="17" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Android/assets/templates/test_blocks.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="20" selection-start="447" selection-end="447" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Android/assets/tilesets/test_tiles.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="58" selection-start="265" selection-end="265" vertical-scroll-proportion="0.20029673">
+        <state line="5" column="4" selection-start="53" selection-end="53" vertical-scroll-proportion="0.11127596">
           <folding />
         </state>
       </provider>

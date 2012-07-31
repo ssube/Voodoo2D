@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -27,6 +28,8 @@ public class BaseEngine extends Game {
     private long frames, frameRound, lastFrameTime;
     private World world;
     private float gametime;
+    private Pixmap overlay;
+    private Texture overlay_texture;
 
     private final int tile = 32;
     private final int source = 32;
@@ -42,6 +45,8 @@ public class BaseEngine extends Game {
         camera.setToOrtho(false, 800, 600);
 
         batch = new SpriteBatch();
+        overlay = new Pixmap(800, 600, Pixmap.Format.RGBA8888);
+        texture = new Texture(800, 600, Pixmap.Format.RGBA8888);
 
         createWorld();
 
@@ -67,6 +72,16 @@ public class BaseEngine extends Game {
     public void resize(int width, int height)
     {
         camera.setToOrtho(false, width, height);
+        if (overlay != null)
+        {
+            overlay.dispose();
+        }
+        overlay = new Pixmap(width, height, Pixmap.Format.RGBA8888);
+        if (overlay_texture != null)
+        {
+            overlay_texture.dispose();
+        }
+        overlay_texture = new Texture(width, height, Pixmap.Format.RGBA8888);
     }
 
     public void dispose()
@@ -115,7 +130,27 @@ public class BaseEngine extends Game {
 
         batch.draw(player, playerPos.x, playerPos.y, tile, tile);
 
+        drawDebugMap();
+        batch.draw(overlay_texture, 0, 0);
+
         batch.end();
+    }
+
+    public void drawDebugMap()
+    {
+        byte[][][] data = world.getData();
+        for (int x = 0; x < data.length; ++x)
+        {
+            byte[][] row = data[x];
+            for (int y = 0; y < row.length; ++y)
+            {
+                byte[] cell = row[y];
+                byte index = cell[World.indexByte];
+                overlay.setColor(index/2f, index/2f, index/2f, 1f);
+                overlay.fillRectangle(x*2, y*2, 2, 2);
+            }
+        }
+        overlay_texture.draw(overlay, 0, 0);
     }
 
     public void calcPerf(long delta)
