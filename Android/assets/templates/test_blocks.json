@@ -6,12 +6,9 @@
             "tier":2,
             "value":0,
             "health":0,
-            "speed":0.0,
-            "resists":null,
-            "shift_mod":null,
-            "shift_kill":null,
+            "speed":[0.0, 0, 0],
+            "shifts":null,
             "occlusion":null,
-            "permeable":false,
             "sticky":false
         },
         {
@@ -20,12 +17,9 @@
             "tier": 1,
             "value": 0,
             "health": 0,
-            "speed": 0.4,
-            "resists":null,
-            "shift_mod":null,
-            "shift_kill":null,
+            "speed": [0.8, 0.4, 1.0],
+            "shifts":null,
             "occlusion":null,
-            "permeable":false,
             "sticky":false
         }
     ]

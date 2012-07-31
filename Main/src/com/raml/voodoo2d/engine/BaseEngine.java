@@ -12,7 +12,9 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.raml.voodoo2d.world.BlockType;
+import com.raml.voodoo2d.world.ObjectType;
 import com.raml.voodoo2d.world.World;
+import sun.rmi.transport.ObjectTable;
 
 import java.io.IOException;
 import java.util.UUID;
@@ -215,7 +217,7 @@ public class BaseEngine extends Game {
             {
                 UUID blockKey = world.getTileset().getTile(cell).getBlock();
                 BlockType block = ResourceManager.getInstance().getBlockType(blockKey);
-                float speed = block.getSpeed();
+                float speed = block.getSpeed(ObjectType.CollisionType.Character);
                 if (speed < mult)
                 {
                     mult = speed;

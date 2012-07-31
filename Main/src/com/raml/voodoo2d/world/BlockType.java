@@ -7,16 +7,10 @@ import com.badlogic.gdx.math.Vector3;
  */
 public class BlockType extends ObjectType
 {
-
     /**
      * How much light is blocked by this object, per-channel. (1,1,1) is full occlusion (no light).
      */
     private Vector3 occlusion;
-
-    /**
-     * Indicates whether liquids can flow through this block.
-     */
-    private boolean permeable;
     
     /**
      * Whether block sticks (no gravity when touching other blocks)
@@ -30,11 +24,6 @@ public class BlockType extends ObjectType
     public Vector3 getOcclusion()
     {
         return occlusion;
-    }
-
-    public boolean getPermeable()
-    {
-        return permeable;
     }
     
     public boolean getSticky()
