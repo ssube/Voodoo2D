@@ -2,6 +2,7 @@
 out/*
 
 # IntelliJ ignores
+.idea/workspace.xml
 
 # Eclipse ignores
 .settings

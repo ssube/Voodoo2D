@@ -82,16 +82,14 @@
     <favorites_list name="Voodoo2d" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4779816">
+    <splitter split-orientation="horizontal" split-proportion="0.47798163">
       <split-first>
         <leaf>
           <file leaf-file-name="BaseEngine.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/BaseEngine.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="51" column="4" selection-start="1652" selection-end="1652" vertical-scroll-proportion="0.0">
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -141,10 +139,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="World.java" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="World.java" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/world/World.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="174" column="4" selection-start="4141" selection-end="4141" vertical-scroll-proportion="0.019756839">
+                <state line="174" column="4" selection-start="4141" selection-end="4141" vertical-scroll-proportion="0.37560505">
                   <folding />
                 </state>
               </provider>
@@ -154,9 +152,7 @@
             <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/ResourceManager.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="67" column="18" selection-start="1935" selection-end="1935" vertical-scroll-proportion="0.0">
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -174,9 +170,7 @@
             <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/tests/WorldTest.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="17" column="0" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0">
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -203,10 +197,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SpriteSheet.java" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="SpriteSheet.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/SpriteSheet.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="44" column="0" selection-start="1528" selection-end="1528" vertical-scroll-proportion="0.6315789">
+                <state line="44" column="0" selection-start="1528" selection-end="1528" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -221,10 +215,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/.gitignore">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="6" column="8" selection-start="68" selection-end="68" vertical-scroll-proportion="0.0">
+                <state line="4" column="18" selection-start="59" selection-end="59" vertical-scroll-proportion="0.05698006">
                   <folding />
                 </state>
               </provider>
@@ -286,7 +280,6 @@
         <option value="$PROJECT_DIR$/Main/src/com/raml/voodoo2d/world/ObjectType.java" />
         <option value="$PROJECT_DIR$/Android/assets/templates/test_blocks.json" />
         <option value="$PROJECT_DIR$/Main/src/com/raml/voodoo2d/common/DiceRoll.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Android/assets/sprites/blocks1.json" />
         <option value="$PROJECT_DIR$/Main/src/com/raml/voodoo2d/tests/WorldTest.java" />
         <option value="$PROJECT_DIR$/Main/src/com/raml/voodoo2d/common/ResourceNotFoundException.java" />
@@ -294,6 +287,7 @@
         <option value="$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/ResourceManager.java" />
         <option value="$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/BaseEngine.java" />
         <option value="$PROJECT_DIR$/Main/src/com/raml/voodoo2d/world/World.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -329,6 +323,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Voodoo2d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -465,16 +469,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Voodoo2d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -492,15 +486,15 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="false" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="PhoneEmu" />
-    <property name="MemberChooser.showClasses" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="dynamic.classpath" value="false" />
     <property name="Downloaded.Files.Path" value="C:\Users\Sean\IdeaProjects\Voodoo2d\lib" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -627,24 +621,6 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -671,6 +647,24 @@
       <envs />
       <properties />
       <listeners />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -765,8 +759,8 @@
     </configuration>
     <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Application.DesktopLoader" />
-      <item index="1" class="java.lang.String" itemvalue="Android Application.Android" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.WorldTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.WorldTest" />
+      <item index="2" class="java.lang.String" itemvalue="Android Application.Android" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -795,18 +789,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32931355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26076555" sideWeight="0.6706865" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13038278" sideWeight="0.6706865" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32931355" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13027889" sideWeight="0.6706865" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32931355" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32931355" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32931355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26076555" sideWeight="0.6706865" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Android Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39981446" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -871,33 +865,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="8" selection-start="68" selection-end="68" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/world/EffectType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="3" selection-start="651" selection-end="651" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Android/assets/sprites/blocks1.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="28" selection-start="702" selection-end="702" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Android/assets/sprites/blocks1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/Main/libs/gdx-sources.jar!/com/badlogic/gdx/graphics/Texture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="261" column="0" selection-start="9130" selection-end="9130" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -914,16 +884,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/world/ObjectType.java">
+    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/world/World.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="17" selection-start="1693" selection-end="1693" vertical-scroll-proportion="0.0">
+        <state line="174" column="4" selection-start="4141" selection-end="4141" vertical-scroll-proportion="0.37560505">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/Main/libs/gdx-sources.jar!/com/badlogic/gdx/graphics/g2d/SpriteBatch.java">
+    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/ResourceManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="753" column="0" selection-start="25545" selection-end="25545" vertical-scroll-proportion="0.0">
+        <state line="67" column="18" selection-start="1935" selection-end="1935" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -935,6 +905,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/tests/WorldTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/Tileset.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="84" column="36" selection-start="2200" selection-end="2200" vertical-scroll-proportion="0.0">
@@ -942,43 +919,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/SpriteSheet.java">
+    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/common/JsonResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="0" selection-start="1528" selection-end="1528" vertical-scroll-proportion="0.6315789">
+        <state line="15" column="83" selection-start="746" selection-end="746" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/ResourceManager.java">
+    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/Sprite.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="18" selection-start="1935" selection-end="1935" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="62" column="49" selection-start="1762" selection-end="1762" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/tests/WorldTest.java">
+    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/world/EffectType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="16" column="3" selection-start="651" selection-end="651" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/BaseEngine.java">
+    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/world/BlockType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="4" selection-start="1652" selection-end="1652" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="26" column="4" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/world/World.java">
+    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/world/ObjectType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="174" column="4" selection-start="4141" selection-end="4141" vertical-scroll-proportion="0.019756839">
+        <state line="68" column="17" selection-start="1693" selection-end="1693" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/common/DiceRoll.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="47" selection-start="595" selection-end="595" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/SpriteSheet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="0" selection-start="1528" selection-end="1528" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="18" selection-start="59" selection-end="59" vertical-scroll-proportion="0.05698006">
           <folding />
         </state>
       </provider>
