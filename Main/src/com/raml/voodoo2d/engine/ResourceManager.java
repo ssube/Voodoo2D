@@ -15,15 +15,10 @@ import com.raml.voodoo2d.world.BlockType;
 import org.apache.commons.io.FilenameUtils;
 
 public class ResourceManager {
-    public class ResourceFilter implements FileFilter {
-        public boolean accept(File file) {
-            return (FilenameUtils.getExtension(file.getName()).equals("json"));
-        }
-    }
-
     public static final String templatePath = "templates";
     public static final String spritePath = "sprites";
     public static final String tilesetPath = "tilesets";
+    public static final String resourceSuffix = "json";
 
     private static ResourceManager instance;
 
@@ -39,9 +34,6 @@ public class ResourceManager {
     FileHandle spriteHandle;
     FileHandle tilesetHandle;
     FileHandle templateHandle;
-    File spriteDir;
-    File tilesetDir;
-    File templateDir;
 
     HashMap<String, SpriteSheet> spritesheets;
     HashMap<String, Tileset> tilesets;
@@ -68,14 +60,11 @@ public class ResourceManager {
             return;
         }
 
-        ResourceFilter filter = new ResourceFilter();
-
         spriteHandle = Gdx.files.internal(spritePath);
         if (spriteHandle != null) {
-            spriteDir = spriteHandle.file();
 
-            for (File spriteFile : spriteDir.listFiles(filter)) {
-                String name = FilenameUtils.getBaseName(spriteFile.getName());
+            for (FileHandle spriteFile : spriteHandle.list(resourceSuffix)) {
+                String name = FilenameUtils.getBaseName(spriteFile.name());
                 try {
                     SpriteSheet sheet = SpriteSheet.load(name);
                     spritesheets.put(name, sheet);
@@ -87,10 +76,8 @@ public class ResourceManager {
 
         tilesetHandle = Gdx.files.internal(tilesetPath);
         if (tilesetHandle != null) {
-            tilesetDir = tilesetHandle.file();
-
-            for (File tilesetFile : tilesetDir.listFiles(filter)) {
-                String name = FilenameUtils.getBaseName(tilesetFile.getName());
+            for (FileHandle tilesetFile : tilesetHandle.list(resourceSuffix)) {
+                String name = FilenameUtils.getBaseName(tilesetFile.name());
                 try {
                     Tileset tileset = Tileset.load(name);
                     tilesets.put(name, tileset);
@@ -102,10 +89,8 @@ public class ResourceManager {
 
         templateHandle = Gdx.files.internal(templatePath);
         if (templateHandle != null) {
-            templateDir = templateHandle.file();
-
-            for (File templateFile : templateDir.listFiles(filter)) {
-                String name = FilenameUtils.getBaseName(templateFile.getName());
+            for (FileHandle templateFile : templateHandle.list(resourceSuffix)) {
+                String name = FilenameUtils.getBaseName(templateFile.name());
                 try {
                     TemplateSheet templateSheet = TemplateSheet.load(name);
                     templatesheets.put(name, templateSheet);

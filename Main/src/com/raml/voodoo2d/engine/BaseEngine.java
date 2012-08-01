@@ -43,8 +43,6 @@ public class BaseEngine extends Game {
         camera.setToOrtho(false, 800, 600);
 
         batch = new SpriteBatch();
-        overlay = new Pixmap(800, 600, Pixmap.Format.RGBA8888);
-        overlay_texture = new Texture(800, 600, Pixmap.Format.RGBA8888);
 
         createWorld();
 
@@ -54,6 +52,8 @@ public class BaseEngine extends Game {
     private void createWorld() {
         try {
             world = World.generate("test", "test_tiles", World.WorldSize.Demo);
+            overlay = new Pixmap(world.getWidth()*2, world.getHeight()*2, Pixmap.Format.RGBA8888);
+            overlay_texture = new Texture(world.getWidth()*2, world.getHeight()*2, Pixmap.Format.RGBA8888);
         } catch (ResourceNotFoundException exc) {
             System.out.println("Error: " + exc.getMessage());
             Throwable exc2 = exc.getCause();
@@ -65,14 +65,6 @@ public class BaseEngine extends Game {
 
     public void resize(int width, int height) {
         camera.setToOrtho(false, width, height);
-        if (overlay != null) {
-            overlay.dispose();
-        }
-        overlay = new Pixmap(width, height, Pixmap.Format.RGBA8888);
-        if (overlay_texture != null) {
-            overlay_texture.dispose();
-        }
-        overlay_texture = new Texture(width, height, Pixmap.Format.RGBA8888);
     }
 
     public void dispose() {
@@ -119,7 +111,7 @@ public class BaseEngine extends Game {
         batch.end();
     }
 
-    public void drawDebugMap() {
+    private void drawDebugMap() {
         byte[][][] data = world.getData();
         for (int x = 0; x < data.length; ++x) {
             byte[][] row = data[x];
@@ -133,7 +125,7 @@ public class BaseEngine extends Game {
         overlay_texture.draw(overlay, 0, 0);
     }
 
-    public void calcPerf(long delta) {
+    private void calcPerf(long delta) {
         ++frames;
         frameRound += delta;
         if (frameRound > 1000000000) {
@@ -145,7 +137,7 @@ public class BaseEngine extends Game {
         }
     }
 
-    public void handleInput(long delta) {
+    private void handleInput(long delta) {
         double mult = delta / 1000000000f;
         gametime += mult;
         double distance = tile * 4;
@@ -191,7 +183,7 @@ public class BaseEngine extends Game {
 
     }
 
-    public float checkCollision(Vector2 newPos) {
+    private float checkCollision(Vector2 newPos) {
         byte[][][] cells = world.getData();
 
         // Figure out what cell this corresponds to
