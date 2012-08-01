@@ -3,6 +3,7 @@ package com.raml.voodoo2d.world;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.raml.voodoo2d.common.PerlinNoise;
+import com.raml.voodoo2d.common.ResourceNotFoundException;
 import com.raml.voodoo2d.engine.ResourceManager;
 import com.raml.voodoo2d.engine.Sprite;
 import com.raml.voodoo2d.engine.SpriteSheet;
@@ -67,21 +68,29 @@ public class World
     @JsonIgnore
     private Map<Byte, Sprite> spriteCache;
 
-    public World(String name, String tileset, WorldSize size) throws IOException
+    public static World generate(String name, String tileset, WorldSize size)
+            throws ResourceNotFoundException
     {
-        ResourceManager resourceManager = ResourceManager.getInstance();
+        World world = new World(name, tileset, size);
+            world.cache();
+        world.generateData();
+        return world;
+    }
 
+    public World(String name, String tileset, WorldSize size)
+    {
         this.name = name;
         this.tileset_name = tileset;
-        this.tileset = resourceManager.getTileset(tileset_name);
 
         this.width = size.width();
         this.height = size.height();
         this.data = new byte[width][height][cellSize];
         this.maxTier = 5;
         this.airTier = 3;
+    }
 
-        List<Byte> byteList = buildTileList();
+    public void generateData()
+    {
         PerlinNoise gen = new PerlinNoise(width, height);
         Random random = new Random();
         
@@ -158,9 +167,18 @@ public class World
         return tileset;
     }
 
-    public void cache()
+    public void cache() throws ResourceNotFoundException
     {
+        tileset = ResourceManager.getInstance().getTileset(tileset_name);
+
+        if (tileset == null)
+        {
+            throw new ResourceNotFoundException("Unable to find tileset " +tileset_name);
+        }
+
         tileset.cache();
+
+        buildTileList();
 
         spriteCache = new HashMap<Byte, Sprite>(255);
         HashMap<Byte, Tileset.Tile> tiles = tileset.getTiles();

@@ -11,44 +11,34 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class TemplateSheet extends JsonResource
-{
+public class TemplateSheet extends JsonResource {
     ArrayList<BlockType> blocks;
     //ArrayList<ItemType> items;
     // ArrayList<CharacterType> characters;
 
-    public static TemplateSheet load(String name) throws IOException
-    {
+    public static TemplateSheet load(String name) throws IOException {
         FileHandle manifest = Gdx.files.internal(ResourceManager.templatePath + "/" + name + ".json");
 
-        if (manifest == null)
-        {
+        if (manifest == null) {
             throw new FileNotFoundException("Unable to find manifest for tileset " + name);
         }
 
-        try
-        {
+        try {
             TemplateSheet sheet = mapper.readValue(manifest.file(), TemplateSheet.class);
 
             return sheet;
-        }
-        catch (JsonParseException exc)
-        {
-            throw new IOException("Error parsing JSON" , exc);
-        }
-        catch (JsonMappingException exc)
-        {
+        } catch (JsonParseException exc) {
+            throw new IOException("Error parsing JSON", exc);
+        } catch (JsonMappingException exc) {
             throw new IOException("Error mapping JSON", exc);
         }
     }
 
-    public TemplateSheet()
-    {
+    public TemplateSheet() {
 
     }
 
-    public ArrayList<BlockType> getBlockTypes()
-    {
+    public ArrayList<BlockType> getBlockTypes() {
         return blocks;
     }
 }

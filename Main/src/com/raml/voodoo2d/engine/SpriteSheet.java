@@ -14,8 +14,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 
-public class SpriteSheet extends JsonResource
-{
+public class SpriteSheet extends JsonResource {
     @JsonIgnore
     private String name;
     @JsonIgnore
@@ -29,65 +28,52 @@ public class SpriteSheet extends JsonResource
     static SpriteSheet load(String name) throws IOException {
         FileHandle manifest = Gdx.files.internal(ResourceManager.spritePath + "/" + name + ".json");
 
-        if (manifest == null)
-        {
+        if (manifest == null) {
             throw new FileNotFoundException("Unable to find resource files for sprite sheet " + name);
         }
 
         // Read the manifest
-        try
-        {
+        try {
             SpriteSheet sheet = mapper.readValue(manifest.file(), SpriteSheet.class);
             sheet.name = name;
 
             FileHandle texture = Gdx.files.internal(ResourceManager.spritePath + File.separator + sheet.texture_name);
-            if (texture == null)
-            {
+            if (texture == null) {
                 throw new FileNotFoundException("Unable to find image for sprite sheet " + name);
             }
 
             sheet.texture = new Texture(texture);
 
             return sheet;
-        }
-        catch (JsonParseException exc)
-        {
-            throw new IOException("Error parsing JSON" , exc);
-        }
-        catch (JsonMappingException exc)
-        {
+        } catch (JsonParseException exc) {
+            throw new IOException("Error parsing JSON", exc);
+        } catch (JsonMappingException exc) {
             throw new IOException("Error mapping JSON", exc);
         }
     }
 
-    public SpriteSheet()
-    {
+    public SpriteSheet() {
         this.sprites = new HashMap<String, Sprite>();
         sprites.put("rock", new Sprite(32, 32, 32, 32));
     }
 
-    public void addSprite(String key, Sprite sprite)
-    {
+    public void addSprite(String key, Sprite sprite) {
         this.sprites.put(key, sprite);
     }
 
-    public Sprite getSprite(String key)
-    {
+    public Sprite getSprite(String key) {
         return this.sprites.get(key);
     }
 
-    public HashMap<String, Sprite> getSprites()
-    {
+    public HashMap<String, Sprite> getSprites() {
         return this.sprites;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return this.name;
     }
 
-    public Texture getTexture()
-    {
+    public Texture getTexture() {
         return this.texture;
     }
 
@@ -95,10 +81,8 @@ public class SpriteSheet extends JsonResource
      * Builds the texture region and animation cache for all sprites contained in this sheet. Greatly improves
      * performance, but can't be done until the texture is created.
      */
-    public void cache()
-    {
-        for (String key: sprites.keySet())
-        {
+    public void cache() {
+        for (String key : sprites.keySet()) {
             sprites.get(key).cache(texture);
         }
     }

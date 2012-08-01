@@ -12,6 +12,15 @@
     <orderEntry type="library" exported="" name="com.fasterxml.jackson.core:jackson-annotations:2.0.0" level="project" />
     <orderEntry type="library" exported="" name="com.fasterxml.jackson.core:jackson-databind:2.0.0" level="project" />
     <orderEntry type="library" exported="" name="org.apache.directory.studio:org.apache.commons.io:2.1" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
 

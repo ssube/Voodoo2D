@@ -12,6 +12,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
+import com.raml.voodoo2d.common.ResourceNotFoundException;
 import com.raml.voodoo2d.world.BlockType;
 import com.raml.voodoo2d.world.ObjectType;
 import com.raml.voodoo2d.world.World;
@@ -34,8 +35,7 @@ public class BaseEngine extends Game {
     private final int tile = 32;
 
     @Override
-    public void create()
-    {
+    public void create() {
         player = new Texture(Gdx.files.internal("actors/player.png"));
         playerPos = new Vector2(400, 300);
 
@@ -51,44 +51,35 @@ public class BaseEngine extends Game {
         lastFrameTime = System.nanoTime();
     }
 
-    private void createWorld()
-    {
-        try
-        {
-            world = new World("test", "test_tiles", World.WorldSize.Demo);
-            world.cache();
-        } catch (IOException exc) {
+    private void createWorld() {
+        try {
+            world = World.generate("test", "test_tiles", World.WorldSize.Demo);
+        } catch (ResourceNotFoundException exc) {
             System.out.println("Error: " + exc.getMessage());
             Throwable exc2 = exc.getCause();
-            if (exc2 != null)
-            {
+            if (exc2 != null) {
                 System.out.println("Error (cause): " + exc2.getMessage());
             }
         }
     }
 
-    public void resize(int width, int height)
-    {
+    public void resize(int width, int height) {
         camera.setToOrtho(false, width, height);
-        if (overlay != null)
-        {
+        if (overlay != null) {
             overlay.dispose();
         }
         overlay = new Pixmap(width, height, Pixmap.Format.RGBA8888);
-        if (overlay_texture != null)
-        {
+        if (overlay_texture != null) {
             overlay_texture.dispose();
         }
         overlay_texture = new Texture(width, height, Pixmap.Format.RGBA8888);
     }
 
-    public void dispose()
-    {
+    public void dispose() {
 
     }
 
-    public void render()
-    {
+    public void render() {
         long now = System.nanoTime();
         long delta = now - lastFrameTime;
         lastFrameTime = now;
@@ -106,17 +97,13 @@ public class BaseEngine extends Game {
         batch.begin();
 
         byte[][][] data = world.getData();
-        for (int x = 0; x < data.length; ++x)
-        {
+        for (int x = 0; x < data.length; ++x) {
             byte[][] row = data[x];
-            for (int y = 0; y < row.length; ++y)
-            {
+            for (int y = 0; y < row.length; ++y) {
                 byte[] cell = row[y];
-                if (cell[World.indexByte] != 0)
-                {
+                if (cell[World.indexByte] != 0) {
                     Sprite sprite = world.getCachedSprite(cell[World.indexByte]);
-                    if (sprite != null)
-                    {
+                    if (sprite != null) {
                         TextureRegion region = sprite.getRegion(nowSeconds);
                         batch.draw(region, x * tile, y * tile);
                     }
@@ -132,29 +119,24 @@ public class BaseEngine extends Game {
         batch.end();
     }
 
-    public void drawDebugMap()
-    {
+    public void drawDebugMap() {
         byte[][][] data = world.getData();
-        for (int x = 0; x < data.length; ++x)
-        {
+        for (int x = 0; x < data.length; ++x) {
             byte[][] row = data[x];
-            for (int y = 0; y < row.length; ++y)
-            {
+            for (int y = 0; y < row.length; ++y) {
                 byte[] cell = row[y];
                 byte index = cell[World.indexByte];
-                overlay.setColor(index/2f, index/2f, index/2f, 1f);
-                overlay.fillRectangle(x*2, y*2, 2, 2);
+                overlay.setColor(index / 2f, index / 2f, index / 2f, 1f);
+                overlay.fillRectangle(x * 2, y * 2, 2, 2);
             }
         }
         overlay_texture.draw(overlay, 0, 0);
     }
 
-    public void calcPerf(long delta)
-    {
+    public void calcPerf(long delta) {
         ++frames;
         frameRound += delta;
-        if (frameRound > 1000000000)
-        {
+        if (frameRound > 1000000000) {
             float rate = frames / (frameRound / 1000000000f);
             System.out.println(String.format("FPS: %f (%d / %d)", rate, frames, frameRound));
 
@@ -163,54 +145,43 @@ public class BaseEngine extends Game {
         }
     }
 
-    public void handleInput(long delta)
-    {
+    public void handleInput(long delta) {
         double mult = delta / 1000000000f;
         gametime += mult;
         double distance = tile * 4;
 
         Vector2 newPos = new Vector2(playerPos);
 
-        if (gametime > 0.25f)
-        {
-            if (Gdx.input.isKeyPressed(Input.Keys.BACKSPACE))
-            {
+        if (gametime > 0.25f) {
+            if (Gdx.input.isKeyPressed(Input.Keys.BACKSPACE)) {
                 createWorld();
             }
-            if (Gdx.input.isTouched())
-            {
+            if (Gdx.input.isTouched()) {
                 Vector3 touchPos = new Vector3();
                 touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
                 camera.unproject(touchPos);
 
-                if (Gdx.input.isKeyPressed(Input.Keys.SHIFT_LEFT))
-                {
+                if (Gdx.input.isKeyPressed(Input.Keys.SHIFT_LEFT)) {
                     checkCreate(touchPos);
-                }
-                else
-                {
+                } else {
                     checkDamage(touchPos);
                 }
             }
         }
 
-        if (Gdx.input.isKeyPressed(Input.Keys.A))
-        {
+        if (Gdx.input.isKeyPressed(Input.Keys.A)) {
             newPos.x -= (distance * mult);
         }
 
-        if (Gdx.input.isKeyPressed(Input.Keys.D))
-        {
+        if (Gdx.input.isKeyPressed(Input.Keys.D)) {
             newPos.x += (distance * mult);
         }
 
-        if (Gdx.input.isKeyPressed(Input.Keys.S))
-        {
+        if (Gdx.input.isKeyPressed(Input.Keys.S)) {
             newPos.y -= (distance * mult);
         }
 
-        if (Gdx.input.isKeyPressed(Input.Keys.W))
-        {
+        if (Gdx.input.isKeyPressed(Input.Keys.W)) {
             newPos.y += (distance * mult);
         }
 
@@ -220,8 +191,7 @@ public class BaseEngine extends Game {
 
     }
 
-    public float checkCollision(Vector2 newPos)
-    {
+    public float checkCollision(Vector2 newPos) {
         byte[][][] cells = world.getData();
 
         // Figure out what cell this corresponds to
@@ -232,25 +202,21 @@ public class BaseEngine extends Game {
         // Find the average multiplier of the cells
         float mult = 1f;
 
-        for (int i = 0; i < 2; ++i)
-        {
-            if (newCells[i].x < 0 || newCells[i].y < 0 || newCells[i].x >= world.getWidth() || newCells[i].y >= world.getHeight())
-            {
+        for (int i = 0; i < 2; ++i) {
+            if (newCells[i].x < 0 || newCells[i].y < 0 || newCells[i].x >= world.getWidth() || newCells[i].y >= world.getHeight()) {
                 return 0f;
             }
 
-            int cellX = (int)Math.floor(newCells[i].x);
-            int cellY = (int)Math.floor(newCells[i].y);
+            int cellX = (int) Math.floor(newCells[i].x);
+            int cellY = (int) Math.floor(newCells[i].y);
 
             byte cell = cells[cellX][cellY][World.indexByte];
 
-            if (cell != 0)
-            {
+            if (cell != 0) {
                 UUID blockKey = world.getTileset().getTile(cell).getBlock();
                 BlockType block = ResourceManager.getInstance().getBlockType(blockKey);
                 float speed = block.getSpeed(ObjectType.CollisionType.Character);
-                if (speed < mult)
-                {
+                if (speed < mult) {
                     mult = speed;
                 }
             }
@@ -259,66 +225,54 @@ public class BaseEngine extends Game {
         return mult;
     }
 
-    public void checkDamage(Vector3 pos)
-    {
+    public void checkDamage(Vector3 pos) {
         Vector2 cellPos = new Vector2(pos.x, pos.y).mul(1f / tile);
-        int cellX = (int)Math.floor(cellPos.x);
-        int cellY = (int)Math.floor(cellPos.y);
+        int cellX = (int) Math.floor(cellPos.x);
+        int cellY = (int) Math.floor(cellPos.y);
 
         byte[][][] cells = world.getData();
 
-        if (cellX < 0 || cellY < 0 || cellX >= world.getWidth() || cellY >= world.getHeight())
-        {
+        if (cellX < 0 || cellY < 0 || cellX >= world.getWidth() || cellY >= world.getHeight()) {
             return;
         }
 
         byte[] cell = cells[cellX][cellY];
         byte health = cell[World.healthByte];
         health -= 10;
-        if (health < 0)
-        {
-            for (int i = 0; i < World.cellSize; ++i)
-            {
+        if (health < 0) {
+            for (int i = 0; i < World.cellSize; ++i) {
                 cells[cellX][cellY][i] = 0;
             }
-        }
-        else
-        {
+        } else {
             cells[cellX][cellY][World.healthByte] = health;
         }
     }
 
-    public void checkCreate(Vector3 pos)
-    {
+    public void checkCreate(Vector3 pos) {
         Vector2 cellPos = new Vector2(pos.x, pos.y).mul(1f / tile);
-        int cellX = (int)Math.floor(cellPos.x);
-        int cellY = (int)Math.floor(cellPos.y);
+        int cellX = (int) Math.floor(cellPos.x);
+        int cellY = (int) Math.floor(cellPos.y);
 
         byte[][][] cells = world.getData();
 
-        if (cellX < 0 || cellY < 0 || cellX >= world.getWidth() || cellY >= world.getHeight())
-        {
+        if (cellX < 0 || cellY < 0 || cellX >= world.getWidth() || cellY >= world.getHeight()) {
             return;
         }
 
         byte[] cell = cells[cellX][cellY];
-        if (cell[World.indexByte] == 0)
-        {
-            for (int i = 0; i < World.cellSize; ++i)
-            {
+        if (cell[World.indexByte] == 0) {
+            for (int i = 0; i < World.cellSize; ++i) {
                 cells[cellX][cellY][i] = 50;
             }
             cells[cellX][cellY][World.indexByte] = world.getNewBlock(cellX, cellY);
         }
     }
 
-    public void pause()
-    {
+    public void pause() {
 
     }
 
-    public void resume()
-    {
+    public void resume() {
 
     }
 }
