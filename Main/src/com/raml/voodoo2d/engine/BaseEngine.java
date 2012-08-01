@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.util.UUID;
 
 public class BaseEngine extends Game {
-    private Texture player, texture;
+    private Texture player;
     private OrthographicCamera camera;
     private SpriteBatch batch;
     private Vector2 playerPos;
@@ -32,21 +32,19 @@ public class BaseEngine extends Game {
     private Texture overlay_texture;
 
     private final int tile = 32;
-    private final int source = 32;
 
     @Override
     public void create()
     {
-        this.player = new Texture(Gdx.files.internal("actors/player.png"));
-        this.playerPos = new Vector2(400, 300);
-        this.texture = new Texture(Gdx.files.internal("sprites/blocks1.png"));
+        player = new Texture(Gdx.files.internal("actors/player.png"));
+        playerPos = new Vector2(400, 300);
 
         camera = new OrthographicCamera();
         camera.setToOrtho(false, 800, 600);
 
         batch = new SpriteBatch();
         overlay = new Pixmap(800, 600, Pixmap.Format.RGBA8888);
-        texture = new Texture(800, 600, Pixmap.Format.RGBA8888);
+        overlay_texture = new Texture(800, 600, Pixmap.Format.RGBA8888);
 
         createWorld();
 
@@ -119,9 +117,7 @@ public class BaseEngine extends Game {
                     Sprite sprite = world.getCachedSprite(cell[World.indexByte]);
                     if (sprite != null)
                     {
-                        //Rectangle rect = sprite.getFrame(0);
                         TextureRegion region = sprite.getRegion(nowSeconds);
-                        //batch.draw(texture, x * tile, y * tile, (int)rect.x, (int)rect.y, (int)rect.width, (int)rect.height);
                         batch.draw(region, x * tile, y * tile);
                     }
                 }

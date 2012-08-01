@@ -1,5 +1,5 @@
 {
-    "texture":"test.png",
+    "texture": "test.png",
     "sprites":{
         "rock":{
             "bounds":{
