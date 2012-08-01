@@ -2,9 +2,6 @@
 out/*
 
 # IntelliJ ignores
-.idea/*
-.idea
-*.iml
 
 # Eclipse ignores
 .settings

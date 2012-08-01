@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="Desktop:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/Desktop_jar</output-path>
+  <artifact type="jar" name="voodoo2d:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/voodoo2d_jar</output-path>
     <root id="archive" name="Desktop.jar">
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/Desktop/src/META-INF/MANIFEST.MF" />

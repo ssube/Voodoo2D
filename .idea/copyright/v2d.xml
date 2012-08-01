@@ -1,0 +1,9 @@
+<component name="CopyrightManager">
+  <copyright>
+    <option name="notice" value="/**&#10; * This file is part of the Voodoo2D engine.&#10; *&#10; * Copyright (c) 2012 by Sean Sube.&#10; */" />
+    <option name="keyword" value="Copyright" />
+    <option name="allowReplaceKeyword" value="" />
+    <option name="myName" value="v2d" />
+    <option name="myLocal" value="true" />
+  </copyright>
+</component>

@@ -65,19 +65,10 @@
     <splitter split-orientation="horizontal" split-proportion="0.4779817">
       <split-first>
         <leaf>
-          <file leaf-file-name="BaseEngine.java" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="BaseEngine.java" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/BaseEngine.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="148" column="60" selection-start="4480" selection-end="4480" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/.gitignore">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="5" column="4" selection-start="53" selection-end="53" vertical-scroll-proportion="0.11127596">
+                <state line="136" column="4" selection-start="4092" selection-end="4092" vertical-scroll-proportion="0.45400593">
                   <folding />
                 </state>
               </provider>
@@ -184,10 +175,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Sprite.java" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="Sprite.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/Sprite.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="56" column="3" selection-start="1306" selection-end="1306" vertical-scroll-proportion="0.021489972">
+                <state line="73" column="12" selection-start="1844" selection-end="1844" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="4" column="0" selection-start="41" selection-end="41" vertical-scroll-proportion="0.08595989">
                   <folding />
                 </state>
               </provider>
@@ -458,7 +458,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -885,23 +885,23 @@
         <state line="16" column="3" selection-start="651" selection-end="651" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/Sprite.java">
+    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/BaseEngine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="3" selection-start="1306" selection-end="1306" vertical-scroll-proportion="0.021489972">
+        <state line="136" column="4" selection-start="4092" selection-end="4092" vertical-scroll-proportion="0.45400593">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/BaseEngine.java">
+    <entry file="file://$PROJECT_DIR$/Main/src/com/raml/voodoo2d/engine/Sprite.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="148" column="60" selection-start="4480" selection-end="4480" vertical-scroll-proportion="0.0">
+        <state line="73" column="12" selection-start="1844" selection-end="1844" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="4" selection-start="53" selection-end="53" vertical-scroll-proportion="0.11127596">
+        <state line="4" column="0" selection-start="41" selection-end="41" vertical-scroll-proportion="0.08595989">
           <folding />
         </state>
       </provider>
@@ -912,7 +912,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>Desktop:jar</last-edited>
+          <last-edited>voodoo2d:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
